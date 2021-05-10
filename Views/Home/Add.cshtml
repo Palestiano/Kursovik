@@ -1,0 +1,59 @@
+﻿@model Cyrsovay.Models.TextModel
+
+
+@{
+    //ViewData["Title"] = "Список студентов";
+    //@Html.ActionLink("Группы", "dbOutput","Home")
+}
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/css/site.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div class="default">
+        Страница добавления студентов
+        @using (Html.BeginForm())
+        {
+            @Html.LabelFor(model => model.Imya, "Имя студента")
+            <br />
+            @Html.EditorFor(model => model.Imya)
+            <br /><br />
+            @Html.LabelFor(model => model.Familia, "Фамилия")
+            <br />
+            @Html.EditorFor(model => model.Familia)
+            <p>
+                @Html.LabelFor(model => model.Otchestvo, "Отчество")
+                <br />
+                @Html.EditorFor(model => model.Otchestvo)
+            </p>
+            <p>
+                @Html.LabelFor(model => model.Cyrs, "Курс")
+                <br />
+                @Html.EditorFor(model => model.Cyrs)
+            </p>
+            <p>
+                @Html.LabelFor(model => model.Speciality, "Специальность")
+                <br />
+                @Html.EditorFor(model => model.Speciality)
+            </p>
+            <p>
+                @Html.LabelFor(model => model.State, "Стостояние")
+                <br />
+                @Html.EditorFor(model => model.State)
+            </p>
+            <p>
+                @Html.LabelFor(model => model.Postypil, "Дата зачисления")
+                <br />
+                @Html.EditorFor(model => model.Postypil)
+            </p>
+            <br /><br />
+            <input type="submit" value="Добавить" />
+        }
+    </div>
+    <script scr="~/js/bootstrap.min.js"></script>
+</body>
+</html>

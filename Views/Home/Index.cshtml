@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Cyrsovay.Models.TextModel>
+
+
+@{
+    //ViewData["Title"] = "Список студентов";
+    //Layout = null;
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/css/site.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div class="default">
+        <h3>Наши студенты</h3>
+        @Html.ActionLink("Добавить студента", "Add", "Home")
+        <table>
+
+            <tr>
+                <td>Имя</td>
+                <td>Фамилия</td>
+                <td>Отчество</td>
+                <td>Курс</td>
+                <td>Специальность</td>
+                <td>Учится или нет</td>
+                <td>Дата зачисления</td>
+                <td></td>
+            </tr>
+            @foreach (var TechModel in Model)
+            {
+                <tr>
+                    <td>@TechModel.Imya</td>
+                    <td>@TechModel.Familia</td>
+                    <td>@TechModel.Otchestvo</td>
+                    <td>@TechModel.Cyrs</td>
+                    <td>@TechModel.Speciality</td>
+                    <td>@TechModel.State</td>
+                    <td>@TechModel.Postypil</td>
+
+                    <td>
+                        @Html.ActionLink("Редактировать", "Edit", new { Id = TechModel.Id })
+                        @Html.ActionLink("Удалить", "DeleteS", new { id = TechModel.Id })
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+</body>
+</html>
